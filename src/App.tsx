@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from 'logo.svg';
+import library from 'library-react.jpeg';
 import './App.scss';
-import { Header } from './Header';
 import './header.scss';
+import { Header } from './Header';
 import {
   BrowserRouter as Router,
   Switch,
@@ -68,7 +69,7 @@ function AllMembers() {
 
 function ManageMembers() {
   let { id } = useParams();
-  return <h2>ManageMembers</h2>
+  return <h2>Manage Members</h2>
 };
 
 export default App;

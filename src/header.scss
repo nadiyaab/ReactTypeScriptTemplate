@@ -1,21 +1,32 @@
-.navbar {
-    overflow: hidden;
-    background-color: lavender;
-    float: left;
-    font-size: medium;
-    text-align: center;
-    padding: 15px 17px;
-    text-decoration: none;
+body {
+  background: burlywood;
+  margin: 0;
 }
 
-.nav-links {
-    display: flex;
+
+
+
+.navbar {
+    overflow: hidden;
+    background-color: floralwhite;
+    font-size: medium;
+    text-align: justify;
+    padding: 9px 10px;
+    text-decoration: none;
     flex-direction: row;
-    word-spacing: 2;
-  }
+}
+
+.Link {
+  flex-direction: column;
+}
+// .nav-links {
+//     display: flex;
+//     flex-direction: row;
+//     word-spacing: 2;
+  
 
   img {
-    background: url("/Images/library-react.jpeg");
+    background-position: center;
     height: 200px;
   }
   
