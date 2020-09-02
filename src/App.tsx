@@ -1,26 +1,75 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import { Header } from './Header';
+import './header.scss';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
+import { AllBooks } from "./allBooks";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <Header></Header>
+      <Switch>
+        <Route exact path="/">
+          <HomePage/>
+        </Route>
+        <Route exact path="/books">
+          <AllBooks />
+        </Route>
+        <Route path="/members">
+          <AllMembers />
+        </Route>
+        <Route path="/:id" children={<Child/>} />
+        <Route path="/books/:id">
+          <ManageBooks />
+        </Route>
+        <Route path="/:id" children={<Child/>} />
+        <Route path="/members/:id">
+          <ManageMembers />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+function Child() {
+  let { id } = useParams();
+
+  return (
+    <div>
+      <h3>ID: {id}</h3>
     </div>
   );
 }
 
+function HomePage() {
+  return <h2>Home</h2>;
+};
+
+function Books() {
+  return <h2>All Books</h2>
+};
+
+function ManageBooks() {
+  let { id } = useParams();
+return <h2>Manage Books</h2>
+};
+
+function AllMembers() {
+  return <h2>All Members</h2>
+};
+
+function ManageMembers() {
+  let { id } = useParams();
+  return <h2>ManageMembers</h2>
+};
+
 export default App;
+

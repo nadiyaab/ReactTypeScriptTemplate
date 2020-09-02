@@ -1,0 +1,21 @@
+.navbar {
+    overflow: hidden;
+    background-color: lavender;
+    float: left;
+    font-size: medium;
+    text-align: center;
+    padding: 15px 17px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    word-spacing: 2;
+  }
+
+  img {
+    background: url("/Images/library-react.jpeg");
+    height: 200px;
+  }
+  
