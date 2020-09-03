@@ -11,7 +11,8 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import { AllBooks } from "./allBooks";
+import { AllBooks } from './allBooks';
+import { HandleBooks } from  './HandleBooks';
 
 function App() {
   return (
@@ -27,11 +28,9 @@ function App() {
         <Route path="/members">
           <AllMembers />
         </Route>
-        <Route path="/:id" children={<Child/>} />
         <Route path="/books/:id">
-          <ManageBooks />
+          <HandleBooks />
         </Route>
-        <Route path="/:id" children={<Child/>} />
         <Route path="/members/:id">
           <ManageMembers />
         </Route>
@@ -58,10 +57,6 @@ function Books() {
   return <h2>All Books</h2>
 };
 
-function ManageBooks() {
-  let { id } = useParams();
-return <h2>Manage Books</h2>
-};
 
 function AllMembers() {
   return <h2>All Members</h2>
