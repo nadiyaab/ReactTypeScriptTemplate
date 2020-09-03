@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 
+
 interface Book{
     title: string;
     author: string;
@@ -31,6 +32,7 @@ export function AllBooks() {
     return (
         <div>
             <h2>All Books</h2>
+            <button ><a href = "http://localhost:3000/books/add">Add Book</a></button><br></br><br></br>
             <label>
                <input type="text" value={search} 
                onChange={updateSearch}/>
@@ -50,3 +52,4 @@ interface BookProps {
 const Book = ({book}: BookProps) => {
     return <li>{book.author}, {book.title}</li>
 }; 
+

@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { AllBooks } from './allBooks';
 import { HandleBooks } from  './HandleBooks';
+import { AddBook } from './addBook';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HomePage/>
+        </Route>
+        <Route path="/books/add">
+          <AddBook />
         </Route>
         <Route exact path="/books">
           <AllBooks />
@@ -44,7 +48,9 @@ function Child() {
 
   return (
     <div>
-      <h3>ID: {id}</h3>
+      <br> 
+      <h3>Book ID is: {id}</h3>
+      </br>
     </div>
   );
 }
